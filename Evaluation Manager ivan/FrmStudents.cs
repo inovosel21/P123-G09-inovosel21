@@ -1,5 +1,4 @@
-﻿using Evaluation_Manager.Models;
-using Evaluation_Manager.Repositories;
+﻿using Evaluation_Manager.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,13 +18,14 @@ namespace Evaluation_Manager
             InitializeComponent();
         }
 
-        private void FrmStudents_Load(object sender, EventArgs e)
-        {
-            ShowStudents();
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
         }
 
-        private void ShowStudents()
-        {
+        private void FrmStudents_Load(object sender, EventArgs e) {
+            ShowStudents();
+        }
+        private void ShowStudents() {
             var students = StudentRepository.GetStudents();
             dgvStudents.DataSource = students;
 
@@ -35,19 +35,12 @@ namespace Evaluation_Manager
             dgvStudents.Columns["Grade"].DisplayIndex = 3;
         }
 
-        private void btnEvaluateStudent_Click(object sender, EventArgs e)
-        {
-            Student selectedStudent = dgvStudents.CurrentRow.DataBoundItem as Student;
-            if (selectedStudent != null)
-            {
+        private void btnEvaluateStudent_Click(object sender, EventArgs e) {
+            StudentRepository selectedStudent = dgvStudents.CurrentRow.DataBoundItem as StudentRepository;
+            if (selectedStudent != null) {
                 FrmEvaluation frmEvaluation = new FrmEvaluation(selectedStudent);
                 frmEvaluation.ShowDialog();
             }
-        }
-
-        private void btnGenerateEvaluationReport_Click(object sender, EventArgs e) {
-            var form = new FrmFinalReport();
-            form.ShowDialog();
         }
     }
 }

@@ -29,49 +29,35 @@
         private void InitializeComponent()
         {
             this.dgvStudents = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnEvaluateStudent = new System.Windows.Forms.Button();
-            this.btnGenerateEvaluationReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvStudents
             // 
-            this.dgvStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(12, 12);
+            this.dgvStudents.Location = new System.Drawing.Point(1, 1);
             this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudents.Size = new System.Drawing.Size(776, 390);
+            this.dgvStudents.Size = new System.Drawing.Size(414, 410);
             this.dgvStudents.TabIndex = 0;
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnEvaluateStudent
             // 
-            this.btnEvaluateStudent.Location = new System.Drawing.Point(680, 408);
+            this.btnEvaluateStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEvaluateStudent.Location = new System.Drawing.Point(701, 400);
             this.btnEvaluateStudent.Name = "btnEvaluateStudent";
-            this.btnEvaluateStudent.Size = new System.Drawing.Size(108, 30);
+            this.btnEvaluateStudent.Size = new System.Drawing.Size(75, 23);
             this.btnEvaluateStudent.TabIndex = 1;
-            this.btnEvaluateStudent.Text = "Evaluiraj studenta";
+            this.btnEvaluateStudent.Text = "button1";
             this.btnEvaluateStudent.UseVisualStyleBackColor = true;
-            this.btnEvaluateStudent.Click += new System.EventHandler(this.btnEvaluateStudent_Click);
-            // 
-            // btnGenerateEvaluationReport
-            // 
-            this.btnGenerateEvaluationReport.Location = new System.Drawing.Point(555, 409);
-            this.btnGenerateEvaluationReport.Name = "btnGenerateEvaluationReport";
-            this.btnGenerateEvaluationReport.Size = new System.Drawing.Size(99, 29);
-            this.btnGenerateEvaluationReport.TabIndex = 2;
-            this.btnGenerateEvaluationReport.Text = "Generiraj izvještaj";
-            this.btnGenerateEvaluationReport.UseVisualStyleBackColor = true;
-            this.btnGenerateEvaluationReport.Click += new System.EventHandler(this.btnGenerateEvaluationReport_Click);
             // 
             // FrmStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnGenerateEvaluationReport);
+            this.ClientSize = new System.Drawing.Size(828, 450);
             this.Controls.Add(this.btnEvaluateStudent);
             this.Controls.Add(this.dgvStudents);
             this.Name = "FrmStudents";
@@ -85,7 +71,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvStudents;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnEvaluateStudent;
-        private System.Windows.Forms.Button btnGenerateEvaluationReport;
     }
 }

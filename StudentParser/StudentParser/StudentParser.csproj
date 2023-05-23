@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95A6A7A4-526D-467E-BC40-3FE9818F4ACD}</ProjectGuid>
+    <ProjectGuid>{95C85F8A-35AB-4EE5-A3F9-73B4222C61F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Evaluation_Manager</RootNamespace>
-    <AssemblyName>Evaluation Manager</AssemblyName>
+    <RootNamespace>StudentParser</RootNamespace>
+    <AssemblyName>StudentParser</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DBLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Dlls\DBLayer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,54 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmEvaluation.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEvaluation.Designer.cs">
-      <DependentUpon>FrmEvaluation.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFinalReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFinalReport.Designer.cs">
-      <DependentUpon>FrmFinalReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmStudents.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmStudents.Designer.cs">
-      <DependentUpon>FrmStudents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Activity.cs" />
-    <Compile Include="Models\Evaluation.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentReportView.cs" />
-    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ActivityRepository.cs" />
-    <Compile Include="Repositories\EvaluationRepository.cs" />
-    <Compile Include="Repositories\StudentRepository.cs" />
-    <Compile Include="Repositories\TeacherRepository.cs" />
-    <EmbeddedResource Include="FrmEvaluation.resx">
-      <DependentUpon>FrmEvaluation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmFinalReport.resx">
-      <DependentUpon>FrmFinalReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmStudents.resx">
-      <DependentUpon>FrmStudents.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -119,9 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dlls\DBLayer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
